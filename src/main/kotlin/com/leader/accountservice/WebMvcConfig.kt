@@ -74,7 +74,7 @@ class WebMvcConfig @Autowired constructor(
                     }
                     threadJWTData.loadCurrentData(data) { newData ->
                         val jwt = JWT.create().withClaim(DATA_KEY, newData)
-                        response.addHeader(SET_TOKEN_HEADER_KEY, jwt.sign(jwtAlgorithm))
+                        response.setHeader(SET_TOKEN_HEADER_KEY, jwt.sign(jwtAlgorithm))
                     }
                     return true
                 }
